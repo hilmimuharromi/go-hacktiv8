@@ -7,7 +7,7 @@ type Person struct{ name string }
 var PrintPerson = func(persons []*Person) {
 
 	for _, friend := range persons {
-		fmt.Println("friend:", friend)
+		fmt.Println("friend:", friend.name)
 	}
 }
 
