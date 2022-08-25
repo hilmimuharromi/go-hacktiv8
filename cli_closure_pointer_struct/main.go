@@ -22,6 +22,11 @@ var PrintPerson = func(idx int) {
 		{name: "Fatur Ewing Fadh"},
 	}
 
+	if idx > len(listPerson) {
+		fmt.Println("Person is not found")
+		return
+	}
+
 	fmt.Println("person:", listPerson[idx].name)
 }
 
