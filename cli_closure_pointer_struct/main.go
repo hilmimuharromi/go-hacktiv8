@@ -27,7 +27,7 @@ var PrintPerson = func(idx int) {
 		{nama: "Fatur Ewing Fadh", alamat: "Jalan Kebon Sirih", pekerjaan: "Developer", alasan: "Nambah Ilmu"},
 	}
 
-	if idx > len(listPerson) {
+	if idx > len(listPerson) || idx < 0 {
 		fmt.Println("Person is not found")
 		return
 	}
@@ -41,6 +41,10 @@ var PrintPerson = func(idx int) {
 
 func main() {
 	idx := os.Args[1]
-	idxString, _ := strconv.Atoi(idx)
-	PrintPerson(idxString)
+	idxString, err := strconv.Atoi(idx)
+	if err != nil {
+		fmt.Println("index not number")
+	} else {
+		PrintPerson(idxString)
+	}
 }
